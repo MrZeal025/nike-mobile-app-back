@@ -1,0 +1,11 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"allowJs": true,
+		"baseUrl": "./src",
+		"esModuleInterop": true,
+		"outDir": "build",
+		"lib": ["ES2019"]
+	},
+	"exclude": ["node_modules"]
+}
