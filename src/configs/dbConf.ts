@@ -13,7 +13,7 @@ const mongooseConnector = async (mongodbUri: string) => {
 				connected = true;
 				console.log("Successfully connected to the database.\n\n");
 			})
-			.catch((err) => {
+			.catch(() => {
 				console.error(
 					"We have a problem connecting to the database, retrying..."
 				);
