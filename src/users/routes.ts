@@ -1,11 +1,9 @@
 import { Router } from "express";
+import { getOneUserController } from "./_controllers/get";
 
 export const router = Router();
 
-router.route("/many");
+router.route("/:id").get(getOneUserController);
 
-router.route("/:id");
-
-router.route("/");
 
 export default router;
