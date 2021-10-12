@@ -1,6 +1,5 @@
 import { ExistingError } from "./errors";
 import mongoose from "mongoose";
-import { RequestHandler } from "express";
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 /**
  * Checks for any existing fields in the database.
