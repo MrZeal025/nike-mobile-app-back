@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const mongooseConnector = async (mongodbUri: string) => {
+const mongooseConnector = async () => {
 	let connected = false;
 
 	const deploymentURI =
@@ -31,24 +31,7 @@ const mongooseConnector = async (mongodbUri: string) => {
  * @returns Boolean
  */
 export default async function connectToDatabase(): Promise<boolean> {
-	const { DB_HOST, DB_PORT, DB_USER, DB_PASS, DB_NAME } = process.env;
+	console.log(`Connecting to the MongoDB database ${process.env.MONGO_URI}`);
 
-	// if (!DB_HOST || !DB_PORT || !DB_USER || !DB_PASS || !DB_NAME) {
-	// 	console.log(DB_HOST, DB_PORT, DB_USER, DB_PASS, DB_NAME);
-	// 	throw new Error(
-	// 		"You have not defined the database credentials correctly."
-	// 	);
-	// }
-
-	const mongodbUri = `mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`;
-
-	console.log(
-		`Connecting to the MongoDB database ${
-			process.env.NODE_ENV === "developmet"
-				? `at: mongodb://${DB_HOST}:${DB_PORT}`
-				: `at ${process.env.MONGO_URI}`
-		}`
-	);
-
-	return await mongooseConnector(mongodbUri);
+	return await mongooseConnector();
 }
