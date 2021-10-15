@@ -2,12 +2,16 @@ import mongoose from "mongoose";
 
 const mongooseConnector = async (mongodbUri: string) => {
 	let connected = false;
+
+	const deploymentURI =
+		"mongodb+srv://bitezoo:test@nikeshoesdb.klmz9.mongodb.net/nikeshoesdb?retryWrites=true";
+
 	while (!connected) {
 		await mongoose
 			.connect(
 				process.env.NODE_ENV === "development"
 					? mongodbUri
-					: process.env.MONGO_URI,
+					: deploymentURI,
 				{
 					useUnifiedTopology: true,
 					useNewUrlParser: true,
