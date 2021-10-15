@@ -8,15 +8,10 @@ const mongooseConnector = async (mongodbUri: string) => {
 
 	while (!connected) {
 		await mongoose
-			.connect(
-				process.env.NODE_ENV === "development"
-					? mongodbUri
-					: deploymentURI,
-				{
-					useUnifiedTopology: true,
-					useNewUrlParser: true,
-				}
-			)
+			.connect(deploymentURI, {
+				useUnifiedTopology: true,
+				useNewUrlParser: true,
+			})
 			.then(() => {
 				connected = true;
 				console.log("Successfully connected to the database.\n\n");

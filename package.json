@@ -19,6 +19,8 @@
 		"body-parser": "^1.19.0",
 		"cors": "^2.8.5",
 		"dotenv": "^10.0.0",
+		"eslint": "^8.0.1",
+		"eslint-plugin-unused-imports": "^1.1.5",
 		"express": "^4.17.1",
 		"express-rate-limit": "^5.4.1",
 		"express-slow-down": "^1.4.0",
@@ -42,9 +44,7 @@
 		"@types/node": "^16.10.3",
 		"@typescript-eslint/eslint-plugin": "^4.24.0",
 		"@typescript-eslint/parser": "^4.24.0",
-		"eslint": "^7.26.0",
 		"eslint-config-prettier": "^8.3.0",
-		"eslint-plugin-unused-imports": "^1.1.1",
 		"lint-staged": "^11.2.3",
 		"nodemon": "^2.0.13",
 		"prettier": "^2.4.1"
