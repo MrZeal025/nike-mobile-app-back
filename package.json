@@ -8,7 +8,7 @@
 	"license": "MIT",
 	"private": false,
 	"scripts": {
-		"start": "npm run eslint && node -r ts-node/register -r tsconfig-paths/register src/index.ts",
+		"start": " node -r ts-node/register -r tsconfig-paths/register src/index.ts",
 		"build": "tsc",
 		"eslint": "eslint . --fix --config .eslintrc.js --ext .ts,.tsx",
 		"eslint:files": "npm run eslint | grep -e '^/.*tsx$' -e '^/.*ts$'",
