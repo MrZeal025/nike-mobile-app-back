@@ -8,7 +8,7 @@
 	"license": "MIT",
 	"private": false,
 	"scripts": {
-		"start": "node -r ts-node -r tsconfig-paths src/index.ts",
+		"start": "node -r ts-node/register -r tsconfig-paths/register src/index.ts",
 		"build": "tsc",
 		"eslint": "eslint . --fix --config .eslintrc.js --ext .ts,.tsx",
 		"eslint:files": "npm run eslint | grep -e '^/.*tsx$' -e '^/.*ts$'",
@@ -26,7 +26,10 @@
 		"jsonwebtoken": "^8.5.1",
 		"mongoose": "^5.13.10",
 		"morgan": "^1.10.0",
-		"node-dev": "^7.0.0"
+		"node-dev": "^7.0.0",
+		"ts-node": "^10.3.0",
+		"ts-node-dev": "^1.1.8",
+		"tsconfig-paths": "^3.11.0"
 	},
 	"devDependencies": {
 		"@types/bcryptjs": "^2.4.2",
@@ -44,9 +47,6 @@
 		"lint-staged": "^11.2.3",
 		"nodemon": "^2.0.13",
 		"prettier": "^2.4.1",
-		"ts-node": "^10.3.0",
-		"ts-node-dev": "^1.1.8",
-		"tsconfig-paths": "^3.11.0",
 		"typescript": "^4.4.3"
 	},
 	"lint-staged": {
