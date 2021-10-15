@@ -8,11 +8,11 @@
 	"license": "MIT",
 	"private": false,
 	"scripts": {
-		"start": "yarn eslint && node -r ts-node/register -r tsconfig-paths/register src/index.ts",
+		"start": "npm run eslint && node -r ts-node/register -r tsconfig-paths/register src/index.ts",
 		"build": "tsc",
 		"eslint": "eslint . --fix --config .eslintrc.js --ext .ts,.tsx",
-		"eslint:files": "yarn eslint | grep -e '^/.*tsx$' -e '^/.*ts$'",
-		"eslint:files:open": "code $(yarn --silent eslint:files)"
+		"eslint:files": "npm run eslint | grep -e '^/.*tsx$' -e '^/.*ts$'",
+		"eslint:files:open": "code $(npm run --silent eslint:files)"
 	},
 	"dependencies": {
 		"bcryptjs": "^2.4.3",
