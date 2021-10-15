@@ -1,1 +1,1 @@
-web: node ./src/index.ts
+web: yarn eslint && node -r ts-node/register -r tsconfig-paths/register src/index.ts
