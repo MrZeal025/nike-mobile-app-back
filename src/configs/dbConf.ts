@@ -2,13 +2,17 @@ import mongoose from "mongoose";
 
 const mongooseConnector = async (mongodbUri: string) => {
 	let connected = false;
-
 	while (!connected) {
 		await mongoose
-			.connect(mongodbUri, {
-				useUnifiedTopology: true,
-				useNewUrlParser: true,
-			})
+			.connect(
+				process.env.NODE_ENV === "development"
+					? mongodbUri
+					: process.env.MONGO_URI,
+				{
+					useUnifiedTopology: true,
+					useNewUrlParser: true,
+				}
+			)
 			.then(() => {
 				connected = true;
 				console.log("Successfully connected to the database.\n\n");
@@ -40,7 +44,11 @@ export default async function connectToDatabase(): Promise<boolean> {
 	const mongodbUri = `mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`;
 
 	console.log(
-		`Connecting to the MongoDB database at: mongodb://${DB_HOST}:${DB_PORT}`
+		`Connecting to the MongoDB database ${
+			process.env.NODE_ENV === "developmet"
+				? `at: mongodb://${DB_HOST}:${DB_PORT}`
+				: `at ${process.env.MONGO_URI}`
+		}`
 	);
 
 	return await mongooseConnector(mongodbUri);
